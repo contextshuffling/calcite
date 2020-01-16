@@ -3248,7 +3248,7 @@ public abstract class EnumerableDefaults {
   public static <TSource, TKey, TElement> Lookup<TKey, TElement> toLookup(
       Enumerable<TSource> source, Function1<TSource, TKey> keySelector,
       Function1<TSource, TElement> elementSelector) {
-    final Map<TKey, List<TElement>> map = new HashMap<>();
+    final Map<TKey, List<TElement>> map = new LinkedHashMap<>();
     return toLookup_(map, source, keySelector, elementSelector);
   }
 
